@@ -2,4 +2,25 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  .container
+    a(href="/stats/allPlayers" class="btn btn-primary"): p Get all players stats
+
+    br
+    br
+
+    p To search by specific player, enter a PlayerID below
+    form
+      label(class="form-label" for="playerId") PlayerID
+      input(name="playerId" type="text" class="form-control" id="playerId" placeholder="20000497")
+      a(href="#" class="btn btn-primary" id="getStatsBtn") Get Stats
+
+    br
+    br
+
+    p To search by team, enter the team abbreviation below
+    form
+      label(class="form-label" for="teamId") Team
+      input(name="teamId" type="text" class="form-control" id="teamId" placeholder="LAL")
+      a(href="/stats/player/" class="btn btn-primary") Get Stats
+
